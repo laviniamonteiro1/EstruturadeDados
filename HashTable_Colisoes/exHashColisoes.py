@@ -92,23 +92,19 @@ class HashTable:
             self.buckets.set(i, LinkedList())
 
     def _hash(self, key):
-        #COLOQUE SEU CÓDIGO AQUI
         return key % self.buckets.capacity
 
     def insert(self, key):
-        #COLOQUE SEU CÓDIGO AQUI
         index = self._hash(key)
         self.buckets.get(index).append(key)
 
     def search(self, key):
-        #COLOQUE SEU CÓDIGO AQUI
         index = self._hash(key)
         if self.buckets.get(index).search(key):
             return index
         return None
 
     def remove(self, key):
-        #COLOQUE SEU CÓDIGO AQUI
         index = self._hash(key)
         return self.buckets.get(index).remove(key)
 
